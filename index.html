@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kirish / Ro'yxatdan o'tish</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Umumiy sozlamalar */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-image: url(fon.jpg);
+      min-height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
+      box-sizing: border-box;
+    }
+    .auth-container {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;            /* biroz kattaroq */
+      overflow: hidden;
+    }
+
+    /* Tablar */
+    .tabs {
+      display: flex;
+    }
+    .tab {
+      flex: 1;
+      padding: 12px;
+      background: #e0e0e0;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .tab.active {
+      background: #3498db;
+      color: white;
+    }
+
+    /* Formalar */
+    .form-box {
+      padding: 30px 25px;
+    }
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 12px 40px 12px 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .input-group i {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      cursor: pointer;
+    }
+
+    /* Tugmalar */
+    .btn-full {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-full:disabled {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+    .login-btn {
+      background-color: #27ae60;
+      color: white;
+    }
+    .login-btn:hover:not(:disabled) {
+      background-color: #219150;
+    }
+    .register-btn {
+      background-color: #3498db;
+      color: white;
+    }
+    .register-btn:hover:not(:disabled) {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <!-- Tab tugmalar -->
+    <div class="tabs">
+      <button id="loginTab" class="tab active">Kirish</button>
+      <button id="registerTab" class="tab">Ro'yxatdan o'tish</button>
+    </div>
+
+    <!-- Kirish formasi -->
+    <div id="loginForm" class="form-box">
+      <h2>Kirish</h2>
+      <div class="input-group">
+        <input type="tel" id="loginPhone" placeholder="Telefon raqami" />
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Parol" id="loginPassword" />
+        <i class="fas fa-eye" onclick="togglePassword('loginPassword', this)"></i>
+      </div>
+
+      <a href="main.html" style="text-decoration: none;">
+        <button id="loginBtn" class="btn-full login-btn" disabled>Kirish</button>
+      </a>
+     
+    </div>
+
+    <!-- Ro'yxatdan o'tish formasi -->
+    <div id="registerForm" class="form-box" style="display:none;">
+      <h2>Ro'yxatdan o'tish</h2>
+      <div class="input-group">
+        <input type="tel" id="regPhone" placeholder="Telefon raqami" />
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Parol" id="regPassword" />
+        <i class="fas fa-eye" onclick="togglePassword('regPassword', this)"></i>
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Parolni takrorlang" id="confirmPassword" />
+        <i class="fas fa-eye" onclick="togglePassword('confirmPassword', this)"></i>
+      </div>
+      <div class="input-group">
+        <input type="text" id="inviteCode" placeholder="Taklif kodi (ixtiyoriy)" />
+      </div>
+      <a href="main.html" style="text-decoration: none;">
+        <button id="registerBtn" class="btn-full register-btn" disabled>Ro'yxatdan o'tish</button>
+      </a>
+      
+    </div>
+  </div>
+
+  <script>
+    // Tab almashinuvi
+    const loginTab = document.getElementById('loginTab'),
+          registerTab = document.getElementById('registerTab'),
+          loginForm = document.getElementById('loginForm'),
+          registerForm = document.getElementById('registerForm'),
+          loginBtn = document.getElementById('loginBtn'),
+          registerBtn = document.getElementById('registerBtn');
+
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      registerTab.classList.remove('active');
+      loginForm.style.display = 'block';
+      registerForm.style.display = 'none';
+      checkInputs();
+    });
+    registerTab.addEventListener('click', () => {
+      registerTab.classList.add('active');
+      loginTab.classList.remove('active');
+      registerForm.style.display = 'block';
+      loginForm.style.display = 'none';
+      checkInputs();
+    });
+
+    // Show/hide parol
+    function togglePassword(id, icon) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('fa-eye','fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.replace('fa-eye-slash','fa-eye');
+      }
+    }
+
+    // Bir funksiya -- aktif formadagi inputlarni tekshiradi
+    function checkInputs() {
+      if (loginForm.style.display !== 'none') {
+        const p = document.getElementById('loginPhone').value.trim(),
+              pw = document.getElementById('loginPassword').value.trim();
+        loginBtn.disabled = !(p && pw);
+      } else {
+        const p = document.getElementById('regPhone').value.trim(),
+              pw1 = document.getElementById('regPassword').value.trim(),
+              pw2 = document.getElementById('confirmPassword').value.trim();
+        registerBtn.disabled = !(p && pw1 && pw2);
+      }
+    }
+
+    // Barcha inputlarga listener qo'shamiz
+    document.querySelectorAll('input').forEach(inp =>
+      inp.addEventListener('input', checkInputs)
+    );
+
+    // Boshlanishda tekshir
+    checkInputs();
+    function checkInputs() {
+  if (loginForm.style.display !== 'none') {
+    const p = document.getElementById('loginPhone').value.trim(),
+          pw = document.getElementById('loginPassword').value.trim();
+    loginBtn.disabled = !(p && pw);
+  } else {
+    const p = document.getElementById('regPhone').value.trim(),
+          pw1 = document.getElementById('regPassword').value.trim(),
+          pw2 = document.getElementById('confirmPassword').value.trim();
+
+    // Yangi: parollar mos bo'lishi kerak
+    const passwordsMatch = pw1 === pw2;
+
+    registerBtn.disabled = !(p && pw1 && pw2 && passwordsMatch);
+  }
+}
+
+  </script>
+
+</body>
+</html>

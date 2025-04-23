@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referal Varog'i</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding-bottom: 70px;
+      background-image: url(fon.jpg);
+    }
+
+    .main-content {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .ref-link {
+      background-color: #e0f7fa;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 15px;
+      color: #00796b;
+      word-break: break-word;
+      position: relative;
+    }
+
+    #refText {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .copy-btn {
+      background-color: #00bfa5;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .copy-btn:hover {
+      background-color: #009e88;
+    }
+
+    .table-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 25px 0 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      height: 40px;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+
+    /* Footer nav */
+    .footer-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      border-top: 1px solid #ddd;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .footer-btn {
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .footer-btn i {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    .footer-btn:hover {
+      color: #3498db;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 5px;
+      text-decoration: none;
+      color: #9edbff;
+      font-weight: bold;
+      font-size: 16px;
+      border: 1px solid #9edbff;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #09003d;
+      color: white;
+    }
+    .h1h2h3 {
+color: white;
+text-align: center;
+
+    }
+  </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-button">← Orqaga qaytish</a>
+
+  <div class="main-content">
+    <h2>Taklif kodi</h2>
+
+    <div class="ref-link">
+      <span id="refText"></span>
+      <button class="copy-btn" onclick="copyReferral()">Nusxa olish</button>
+    </div>
+  <div class="h1h2h3">
+<h3>lvl-1 -----25%</h3>
+<h4>lvl-2 -----3%</h4>
+<h5>lvl-3 -----2%</h5>
+  </div>
+    <div class="table-title" style="color: #ddd;">Sizning referallaringiz</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ism</th>
+          <th>Email</th>
+          <th>Qo'shilgan sana</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 15 ta bo'sh qator -->
+        <tr><td>1</td><td></td><td></td><td></td></tr>
+        <tr><td>2</td><td></td><td></td><td></td></tr>
+        <tr><td>3</td><td></td><td></td><td></td></tr>
+        <tr><td>4</td><td></td><td></td><td></td></tr>
+        <tr><td>5</td><td></td><td></td><td></td></tr>
+        <tr><td>6</td><td></td><td></td><td></td></tr>
+        <tr><td>7</td><td></td><td></td><td></td></tr>
+        <tr><td>8</td><td></td><td></td><td></td></tr>
+        <tr><td>9</td><td></td><td></td><td></td></tr>
+        <tr><td>10</td><td></td><td></td><td></td></tr>
+        <tr><td>11</td><td></td><td></td><td></td></tr>
+        <tr><td>12</td><td></td><td></td><td></td></tr>
+        <tr><td>13</td><td></td><td></td><td></td></tr>
+        <tr><td>14</td><td></td><td></td><td></td></tr>
+        <tr><td>15</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pastki navigatsiya -->
+  <div class="footer-nav">
+    <a href="main.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-house"></i><span>Bosh sahifa</span></button>
+    </a>
+    <a href="product.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-box"></i><span>Maxsulot</span></button>
+    </a>
+    <a href="invite.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-link"></i><span>Referal</span></button>
+    </a>
+    <a href="my.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-user"></i><span>Men</span></button>
+    </a>
+</div>
+
+<!-- Nusxa olish scripti -->
+<script>
+  function copyReferral() {
+    const refText = document.getElementById("refText").innerText;
+    navigator.clipboard.writeText(refText).then(() => {
+      alert("Referal havola nusxalandi!");
+    }).catch(err => {
+      alert("Nusxalab bo'lmadi: " + err);
+    });
+  }
+
+
+
+
+
+  
+  // Sahifa yuklanganda random taklif kodini generatsiya qilish
+  document.addEventListener("DOMContentLoaded", function () {
+    const randomCode = Math.floor(10000 + Math.random() * 90000); // 5 xonali random son (10000 - 99999)
+    document.getElementById("refText").innerText = randomCode;
+  });
+
+  function copyReferral() {
+    const refText = document.getElementById("refText").innerText;
+    navigator.clipboard.writeText(refText).then(() => {
+      alert("Referal havola nusxalandi!");
+    }).catch(err => {
+      alert("Nusxalab bo'lmadi: " + err);
+    });
+  }
+
+
+</script>
+
+</body>
+</html>

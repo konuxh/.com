@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahifa - Karusel, Tugmalar, Mahsulotlar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding-bottom: 70px;
+      background-image:url(fon.jpg);
+    }
+
+    .main-content {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Karusel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .carousel-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .carousel-img.active {
+      display: block;
+      position: relative;
+    }
+
+    /* Tugmalar */
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      justify-items: center;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      height: 80px;
+      width: 80px;
+      cursor: pointer;
+      font-size: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .btn i {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+
+    /* Mahsulotlar */
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .product {
+      background-color: white;
+      border-radius: 12px;
+      padding: 10px;
+      width: 90%;
+      max-width: 360px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      font-size: 20px;
+      color: #27ae60;
+    }
+
+    /* Pastki navigatsiya */
+    .footer-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      border-top: 1px solid #ddd;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .footer-btn {
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .footer-btn i {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    .footer-btn:hover {
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+
+    <!-- Karusel -->
+    <div class="carousel">
+      <img class="carousel-img" src="konux.png" alt="Rasm 1">
+      <img class="carousel-img" src="ai-1.jpg" alt="Rasm 2">
+      <img class="carousel-img" src="ai-2.jpg" alt="Rasm 3">
+      <img class="carousel-img" src="ai-3.jpg" alt="Rasm 4">
+      <img class="carousel-img" src="ai-4.jpg" alt="Rasm 5">
+    </div>
+
+    <!-- 8 ta tugma -->
+    <div class="button-container">
+        <a href="recharge70.html" style="text-decoration: none;">
+            <button class="btn"><i class="fas fa-wallet"></i>To'ldirish</button>
+        </a>
+      <a href="withdraw.html" style="text-decoration: none;">
+        <button class="btn"><i class="fas fa-money-bill-wave"></i>Yechish</button>
+
+      </a>
+      
+      <a href="https://t.me/konux_chat" style="text-decoration: none;">
+
+        <button class="btn"><i class="fab fa-telegram"></i>Telegram</button>
+      </a>
+      
+
+      <a href="https://t.me/Me_refer"  style="text-decoration: none;">
+
+        <button class="btn"><i class="fas fa-question-circle"></i>Yordam</button>
+      </a>
+      
+
+      <a href="team.html" style="text-decoration: none;" >
+
+        <button class="btn"><i class="fas fa-users"></i>Jamoam</button>
+      </a>
+      
+
+      <a href="history.html"  style="text-decoration: none;" >
+        <button class="btn"><i class="fas fa-history"></i>Tarix</button>
+      </a>
+      
+
+      <a href="invite.html"  style="text-decoration: none;">
+        <button class="btn"><i class="fas fa-link"></i>Referal</button>
+      </a>
+      <a href="product.html" style="text-decoration: none;">
+        <button class="btn"><i class="fas fa-box"></i>Maxsulot</button>
+      </a>
+      
+    </div>
+
+
+
+    <div style="
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+">
+  <strong>Diqqat!</strong> Ushbu platforma orqali foydalanuvchilar o‘z balanslarini nazorat qilishlari, yangi mahsulotlar bilan tanishishlari va xaridlar amalga oshirishlari mumkin. Har qanday operatsiyani bajarishdan oldin foydalanuvchining roziligi olinadi. Platformamizda shaxsiy ma'lumotlaringiz himoyalangan bo‘lib, uchinchi shaxslarga uzatilmaydi. Agar sizda biron-bir muammo yoki savol yuzaga kelsa, iltimos yordam bo‘limi orqali biz bilan bog‘laning. Muvaffaqiyatli savdolar tilaymiz! Har bir foydalanuvchi biz uchun muhim. Shuning uchun ham har bir fikr, taklif yoki e'tiroz biz uchun qadrlidir. Biz sizni eshitamiz, va doimo takomillashishga intilamiz. Har bir bosilgan tugma, yuborilgan so‘rov yoki to‘lov – bu tizimimizni yanada yaxshilash yo‘lida bir qadamdir. Ishonchingiz uchun rahmat!
+</div>
+
+
+    <!-- Mahsulotlar -->
+    <div class="product-list">
+      <div class="product">
+        <img src="ai-1.jpg" alt="Smartfon">
+        <div class="product-name">AI ROBOT B1</div>
+        <p class="kunlik">Kunlik:7.000 so'm</p>
+        <div class="product-price">Narxi:75.000 so'm</div>
+      </div>
+      <div class="product">
+        <img src="ai-2.jpg" alt="Noutbuk">
+        <div class="product-name">AI ROBOT M2</div>
+        <p class="kunlik">Kunlik:12.000 so'm</p>
+        <div class="product-price">Narxi:120.000 so'm</div>
+      </div>
+      <div class="product">
+        <img src="ai-3.jpg" alt="r">
+        <div class="product-name">AI ROBOT C34</div>
+        <p class="kunlik">Kunlik:21.000 so'm</p>
+        <div class="product-price">Narxi: 200.000 so'm</div>
+      </div>
+      <div class="product">
+        <img src="ai-4.jpg" alt="Televizor">
+        <div class="product-name">AI ROBOT P46</div>
+        <p class="kunlik">Kunlik:32.000 so'm</p>
+        <div class="product-price">Narxi:300.000 so'm</div>
+      </div>
+      <div class="product">
+        <img src="ai-5.jpg" alt="Televizor">
+        <div class="product-name">AI ROBOT G504</div>
+        <p class="kunlik">Kunlik:44.000 so'm</p>
+        <div class="product-price">Narxi:400.000 so'm</div>
+      </div>
+
+      <div class="product">
+        <img src="ai-6.jpg" alt="Televizor">
+        <div class="product-name">AI ROBOT T800</div>
+        <p class="kunlik">Kunlik:60.000 so'm</p>
+        <div class="product-price">Narxi:500.000 so'm</div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!-- Pastki navigatsiya -->
+  <div class="footer-nav">
+    <a href="main.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-house"></i><span>Bosh sahifa</span></button>
+    </a>
+    <a href="product.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-box"></i><span>Maxsulot</span></button>
+    </a>
+    <a href="invite.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-link"></i><span>Referal</span></button>
+    </a>
+    <a href="my.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-user"></i><span>Men</span></button>
+    </a>
+
+    
+  </div>
+
+  <!-- Karusel JS -->
+  <script>
+    const images = document.querySelectorAll(".carousel-img");
+    let index = 0;
+
+    function showSlide() {
+      images.forEach((img, i) => {
+        img.classList.remove("active");
+        if (i === index) {
+          img.classList.add("active");
+        }
+      });
+
+      index = (index + 1) % images.length;
+    }
+
+    showSlide(); // boshlanishi
+    setInterval(showSlide, 2900); // har 0.33 sekundda
+  </script>
+
+</body>
+</html>

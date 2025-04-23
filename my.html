@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-image: url(fon.jpg);
+      padding-bottom: 70px; /* Footer menyu uchun joy */
+    }
+
+    .container {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ccc;
+    }
+
+    .username {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ddd;
+    }
+
+    .button-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%; /* Qo‘shildi */
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+    .menu-btn i {
+      margin-right: 12px;
+      font-size: 20px;
+      color: #3498db;
+    }
+
+    .menu-btn:hover {
+      background-color: #e6f7ff;
+    }
+
+    .logout-btn {
+      margin-top: 40px;
+      background-color: #e74c3c;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #c0392b;
+    }
+
+    /* Footer nav */
+    .footer-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      border-top: 1px solid #ddd;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .footer-btn {
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .footer-btn i {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    .footer-btn:hover {
+      color: #3498db;
+    }
+   
+  .close-btn {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .close-btn:hover {
+    background-color: #c62828;
+  }
+</style>
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Profil rasmi va ism -->
+    <img src="logo.jpg" alt="Profil rasmi" class="profile-pic" />
+    <div class="username">Foydalanuvchi</div>
+       <h2 style="color: #ccc;">Balans: 5.000 so'm</h2>
+    <!-- 8 ta menyu tugmalari -->
+    <div class="button-list">
+      <a href="recharge70.html" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fas fa-plus-circle"></i> Toldirish</button>
+      </a>
+      <a href="withdraw.html" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fas fa-minus-circle"></i> Yechib olish</button>
+      </a>
+      <a href="https://t.me/konux_chat" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fab fa-telegram"></i> Telegram</button>
+      </a>
+      <a href="https://t.me/Me_refer" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fas fa-question-circle"></i> Yordam</button>
+      </a>
+      <a href="team.html" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fas fa-users"></i> Mening jamoam</button>
+      </a>
+      <a href="history.html" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fas fa-clock-rotate-left"></i> Tarix</button>
+      </a>
+      <a href="invite.html" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fas fa-link"></i> Referal link</button>
+      </a>
+      <a href="product.html" style="text-decoration: none;">
+        <button class="menu-btn"><i class="fas fa-box"></i> Maxsulotlar</button>
+      </a>
+    </div>
+
+    <!-- Chiqib ketish -->
+    <button onclick="closeSite()" class="close-btn">chiqish</button>
+
+  </div>
+
+  <!-- Pastki menyu -->
+  <div class="footer-nav">
+    <a href="main.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-house"></i><span>Bosh sahifa</span></button>
+    </a>
+    <a href="product.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-box"></i><span>Maxsulot</span></button>
+    </a>
+    <a href="invite.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-link"></i><span>Referal</span></button>
+    </a>
+    <a href="my.html" style="text-decoration: none;">
+      <button class="footer-btn"><i class="fas fa-user"></i><span>Men</span></button>
+    </a>
+  </div>
+
+  
+  <script>
+    function closeSite() {
+      // Faqat oyna pop-up tarzida ochilgan bo‘lsa, bu ishlaydi
+      window.close();
+  
+      // Agar sahifa asosiy tabda bo‘lsa, foydalanuvchiga xabar beramiz
+      setTimeout(() => {
+        alert("Brauzer bu sahifani to'g'ridan-to'g'ri yopishga ruxsat bermaydi. Iltimos, qo'lda yoping.");
+      }, 500);
+    }
+  </script>
+  
+
+ 
+
+</body>
+</html>
